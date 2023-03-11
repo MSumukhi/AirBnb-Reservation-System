@@ -62,7 +62,21 @@ namespace HWK4.Controllers
             }
         }
 
-       
+        [HttpPost]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+
+        // Producing response for the action addItem() called from billdataRepository
+        public IActionResult CreateItem([FromBody] Airbnb item)
+        {
+            if (item == null)
+            {
+                return BadRequest("Data is null");
+            }
+            bool result = _billRepository.AddItem(item);
+            return result ? Ok(result) : BadRequest();
+        }
+
 
         /// <summary>
         /// GetMean method is the analysis of data. It outputs the mean amount of the bill.
