@@ -10,8 +10,11 @@ namespace HWK4.Interfaces
         ICollection<Airbnb> GetItems();
 
         Airbnb GetItem(int id);
+
+        bool AddItem(Airbnb item);
+
         bool BillExists(int id);
-       
+        
 
         int getMean();
 

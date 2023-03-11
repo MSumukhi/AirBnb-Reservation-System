@@ -40,6 +40,12 @@ namespace HWK4.Repositories
             return _context.Airbnb.Where(bill => bill.Id == id).FirstOrDefault();
         }
 
+        public bool AddItem(Airbnb item)
+        {
+            _context.Add(item);
+            return Save();
+        }
+
         public bool BillExists(int id)
         {
             return _context.Airbnb.Any(bill=>bill.Id == id);
