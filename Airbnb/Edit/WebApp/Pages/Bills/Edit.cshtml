@@ -1,0 +1,36 @@
+﻿@page
+@model WebApp.Pages.Bills.EditModel
+@{
+}
+
+<br />
+<h2>Edit Bill</h2>
+
+@if (@Model.errorMessage.Length > 0)
+{
+    <div>@Model.errorMessage</div>
+}
+<form method="POST">
+    <input type="hidden" name="Id" value="@Model.bill.Id" />
+
+    <table>
+        <tr>
+            <td>Category</td>
+            <td><input type="text" name="category" value="@Model.bill.Category"></td>
+        </tr>
+        <tr>
+            <td>Amount</td>
+            <td><input type="text" name="amount" value="@Model.bill.Amount"></td>
+        </tr>
+        <tr>
+            <td>Date</td>
+            <td><input type="text" name="date" value="@Model.bill.Date"></td>
+        </tr>
+    </table>
+    <p></p>
+    @if (@Model.successMessage.Length > 0)
+    {
+        <div>@Model.successMessage</div>
+    }
+    <input type="submit" value="Edit" class="btn btn-primary" />
+</form>
