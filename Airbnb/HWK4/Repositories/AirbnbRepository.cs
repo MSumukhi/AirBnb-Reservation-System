@@ -1,4 +1,4 @@
-﻿using HWK4.Data;
+using HWK4.Data;
 using HWK4.Interfaces;
 using HWK4.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
@@ -40,9 +40,9 @@ namespace HWK4.Repositories
             return _context.Airbnb.Where(bill => bill.Id == id).FirstOrDefault();
         }
 
-        public bool AddItem(Airbnb item)
+        public bool CreateItem(Airbnb bill)
         {
-            _context.Add(item);
+            _context.Add(bill);
             return Save();
         }
 
@@ -51,8 +51,35 @@ namespace HWK4.Repositories
             return _context.Airbnb.Any(bill=>bill.Id == id);
         }
 
-     
-       
+        /// <summary>
+        /// editItem method is used to update the bill values.This method returns boolean value to indicate if the values are successfully updated or not.
+        /// </summary>
+        /// <param name="bill"></param>
+        /// <param name="updated"></param>
+        /// <returns>bool</returns>
+
+        public bool editItem(Airbnb bill)
+        {
+
+            _context.Update(bill);
+            return Save();
+        }
+
+        /// <summary>
+        /// deleteItem method is used to delete the bill value of the id given. This method returns a boolean to let know if the item is deleted or not.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>bool</returns>
+
+        public bool deleteItem(int Id)
+        {
+            var customer = _context.Airbnb.First(c => c.Id == Id);
+
+            _context.Remove(customer);
+
+            return Save();
+        }
+
 
         /// <summary>
         /// getMean method is to get the mean value of the total bill amount.It returns the mean value.
