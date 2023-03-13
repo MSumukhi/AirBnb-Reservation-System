@@ -1,7 +1,7 @@
-﻿namespace HWK4.Models
+namespace HWK4.Models
 {
     /// <summary>
-    /// This class has the attributes declaration that are in the database
+    /// specifies the structure of the dataset and their datatype declarations
     /// </summary>
     public class Airbnb
     {
@@ -11,13 +11,13 @@
         public String host_name { get; set; }
         public String neighbourhood_group { get; set; }
         public String neighbourhood { get; set; }
-        public int latitude { get; set; }
-        public int longitude { get; set; }
+        public double latitude { get; set; }
+        public double longitude { get; set; }
         public string roomtype { get; set; }
         public int price { get; set; }
         public int minimum_nights { get; set; }
         public int number_of_reviews { get; set; }
-        public int reviews_per_month { get; set; }
+        public double reviews_per_month { get; set; }
         public String availability_365 { get; set; }
 
 
