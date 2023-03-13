@@ -11,7 +11,9 @@ namespace HWK4.Interfaces
 
         Airbnb GetItem(int id);
         bool BillExists(int id);
-       
+        bool CreateItem(Airbnb bill);
+        bool editItem(Airbnb bill);
+        bool deleteItem(int id);
 
         int getMean();
 

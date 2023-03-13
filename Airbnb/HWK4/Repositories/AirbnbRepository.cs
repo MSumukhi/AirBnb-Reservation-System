@@ -45,9 +45,34 @@ namespace HWK4.Repositories
             return _context.Airbnb.Any(bill=>bill.Id == id);
         }
 
-     
-       
 
+        public bool CreateItem(Airbnb item)
+        {
+            _context.Add(item);
+            return Save();
+        }
+
+        public bool editItem(Airbnb item)
+        {
+
+            _context.Update(item);
+            return Save();
+        }
+
+        /// <summary>
+        /// deleteItem method is used to delete the bill value of the id given. This method returns a boolean to let know if the item is deleted or not.
+        /// </summary>
+        /// <param name="id"></param>
+        /// <returns>bool</returns>
+
+        public bool deleteItem(int Id)
+        {
+            var item = _context.Airbnb.First(c => c.Id == Id);
+
+            _context.Remove(item);
+
+            return Save();
+        }
         /// <summary>
         /// getMean method is to get the mean value of the total bill amount.It returns the mean value.
         /// </summary>
