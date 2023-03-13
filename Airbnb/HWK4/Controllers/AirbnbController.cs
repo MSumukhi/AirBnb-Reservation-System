@@ -167,6 +167,19 @@ namespace HWK4.Controllers
         {
             return Ok(_billRepository.getMax());
         }
+        
+        // <summary>
+        /// Availability method returns the recors of Airbnb which are available 365 days
+        /// </summary>
+        /// <returns></returns>
+        [HttpGet("Get Availability")]
+        [ProducesResponseType(200, Type = typeof(List<Airbnb>))]
+
+        public IActionResult Availability()
+        {
+            _logger.Log(LogLevel.Information, "Get Availability");
+            return Ok(_billRepository.Availability());
+        }
 
        
 
