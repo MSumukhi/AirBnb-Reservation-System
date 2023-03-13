@@ -4,7 +4,7 @@ using HWK4.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 ///<summary>
-///BillController provides the CRUD operations along with the data analysis.
+///AirbnbController provides the CRUD operations along with the some data analysis.
 ///</summary>
 
 namespace HWK4.Controllers
@@ -24,7 +24,7 @@ namespace HWK4.Controllers
         }
 
         /// <summary>
-        /// GetItems is to get all the items in the bill.
+        /// GetItems is to retrieve all the records of Airbnb data.
         /// </summary>
         /// <returns>Items list</returns>
 
@@ -39,11 +39,11 @@ namespace HWK4.Controllers
 
 
         /// <summary>
-        /// GetItem function gets the bill details of the id given.It return the bill details of the id if it is found or it returns Notfound.
+        /// GetItem function gets the details of the particular Airbnb given their id. It return the bill details of the id if it is found or it returns Notfound.
         /// </summary>
         /// <param name="id"></param>
         /// <returns>400(notfound) or item</returns>
-        
+
         [HttpGet("{id}")]
         [ProducesResponseType(200, Type = typeof(Airbnb))]
         [ProducesResponseType(400)]
@@ -62,24 +62,30 @@ namespace HWK4.Controllers
             }
         }
 
+        /// <summary>
+        /// The CreateItem Function adds a new record to the dataset. If the record already exists it returns Not added
+        /// </summary>
+        /// <param name="item"></param>
+        /// <returns></returns>
+
         [HttpPost]
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
 
-        public IActionResult CreateItem([FromBody] Airbnb todo)
+        public IActionResult CreateItem([FromBody] Airbnb item)
         {
-            if (todo == null)
+            if (item == null)
             {
                 return BadRequest("Todo is null");
             }
-            bool result = _billRepository.CreateItem(todo);
+            bool result = _billRepository.CreateItem(item);
             if (result)
             {
                 return Ok("Successfully added");
             }
             else
             {
-                return BadRequest("Todo not added");
+                return BadRequest("item not added");
             }
         }
 
@@ -117,7 +123,7 @@ namespace HWK4.Controllers
         }
 
         /// <summary>
-        /// DeleteItem is to delete the bill value of the given id
+        /// DeleteItem is to delete the Airbnb record value of the given id
         /// </summary>
         /// <param name="Id"></param>
         /// <returns>No maching id or Item deleted</returns>
@@ -139,7 +145,7 @@ namespace HWK4.Controllers
         }
 
         /// <summary>
-        /// GetMean method is the analysis of data. It outputs the mean amount of the bill.
+        /// GetMean method provides the avergae price value for all the records of Airbnb dataset
         /// </summary>
         /// <returns>mean</returns>
         [HttpGet("Analysis-GetMean")]
@@ -151,7 +157,7 @@ namespace HWK4.Controllers
         }
 
         /// <summary>
-        /// GetHighestAmount method is to get the highest amount in the bill with the item details.
+        /// GetHighestAmount method is to get the record of highly priced Airbnb
         /// </summary>
         /// <returns>Item details of the highest value</returns>
         [HttpGet("Analysis-GetHighestAmount")]
@@ -161,6 +167,8 @@ namespace HWK4.Controllers
         {
             return Ok(_billRepository.getMax());
         }
+
+       
 
     }
 
