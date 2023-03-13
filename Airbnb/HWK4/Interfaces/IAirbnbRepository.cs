@@ -1,4 +1,4 @@
-﻿using HWK4.Models;
+using HWK4.Models;
 
 namespace HWK4.Interfaces
 {
@@ -11,11 +11,12 @@ namespace HWK4.Interfaces
 
         Airbnb GetItem(int id);
 
-        bool AddItem(Airbnb item);
+        bool CreateItem(Airbnb bill);
 
         bool BillExists(int id);
-        
 
+        bool editItem(Airbnb bill);
+        bool deleteItem(int id);
         int getMean();
 
         int getMax();
