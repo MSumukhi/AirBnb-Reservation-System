@@ -1,4 +1,4 @@
-﻿using HWK4.Interfaces;
+using HWK4.Interfaces;
 using HWK4.Models;
 using HWK4.Repositories;
 using Microsoft.AspNetCore.Mvc;
@@ -66,17 +66,77 @@ namespace HWK4.Controllers
         [ProducesResponseType(200)]
         [ProducesResponseType(400)]
 
-        // Producing response for the action addItem() called from billdataRepository
-        public IActionResult CreateItem([FromBody] Airbnb item)
+        public IActionResult CreateItem([FromBody] Airbnb todo)
+        {
+            if (todo == null)
+            {
+                return BadRequest("Todo is null");
+            }
+            bool result = _billRepository.CreateItem(todo);
+            if (result)
+            {
+                return Ok("Successfully added");
+            }
+            else
+            {
+                return BadRequest("Todo not added");
+            }
+        }
+
+        /// <summary>
+        /// UpdateItem method updated the values to the items with the given id. It output if the values are updated or not.
+        /// If the given id is not found, it throws Id not found.If updated successfully, it says updated and if the values are
+        /// null, it returns badrequest
+        /// </summary>
+        /// <param name="item"></param>
+        /// <param name="item"></param>
+        ///<returns>Item is null or No matching id or Successfully updated</returns>
+
+        [HttpPut]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+        [ProducesResponseType(404)]
+
+        public IActionResult UpdateItem([FromBody] Airbnb item)
         {
             if (item == null)
             {
-                return BadRequest("Data is null");
+                return BadRequest("Item is null");
             }
-            bool result = _billRepository.AddItem(item);
-            return result ? Ok(result) : BadRequest();
+
+            bool isUpdated = _billRepository.editItem(item);
+
+            if (!isUpdated)
+            {
+                return NotFound("No matching Id");
+            }
+            else
+            {
+                return Ok("Successfully updated");
+            }
         }
 
+        /// <summary>
+        /// DeleteItem is to delete the bill value of the given id
+        /// </summary>
+        /// <param name="Id"></param>
+        /// <returns>No maching id or Item deleted</returns>
+
+        [HttpDelete]
+
+        public IActionResult DeleteItem(int Id)
+        {
+            bool deleted = _billRepository.deleteItem(Id);
+            if (!deleted)
+            {
+                return NotFound("No matching id");
+            }
+
+            else
+            {
+                return Ok("Item deleted");
+            }
+        }
 
         /// <summary>
         /// GetMean method is the analysis of data. It outputs the mean amount of the bill.
