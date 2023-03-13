@@ -3,7 +3,7 @@ using HWK4.Models;
 namespace HWK4.Interfaces
 {
     /// <summary>
-    /// This interface has the declarations for the methods used.
+    /// The interface provides the declarations for the methods used
     /// </summary>
     public interface IAirbnbRepository
     {
@@ -20,6 +20,7 @@ namespace HWK4.Interfaces
         int getMean();
 
         int getMax();
+
         bool Save();
     }
 }
