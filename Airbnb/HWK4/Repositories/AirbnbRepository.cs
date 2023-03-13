@@ -119,6 +119,16 @@ namespace HWK4.Repositories
             int saved = _context.SaveChanges();
             return saved == 1;
         }
+        
+        /// <summary>
+        /// Availability method returns the records of airbnb which are available 365 days.
+        /// </summary>
+        /// <returns></returns>
+        public ICollection<Airbnb> Availability()
+        {
+            return _context.Airbnb.Where(bill => bill.availability_365=="365").ToList();
+           // return _context.Airbnb.ToList();
+        }
 
 
     }
