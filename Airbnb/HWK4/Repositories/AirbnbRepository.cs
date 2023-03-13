@@ -11,7 +11,7 @@ using System.Xml.Linq;
 
 namespace HWK4.Repositories
 {
-    public class AirbnbRepository:IAirbnbRepository
+    public class AirbnbRepository : IAirbnbRepository
     {
         private DataContext _context;
 
@@ -21,16 +21,16 @@ namespace HWK4.Repositories
         }
 
         /// <summary>
-        /// This getItems method return all the items in the items list which contains the Grocery bill details.
+        /// Returns all the items of the Airbnb dataset
         /// </summary>
-        /// <returns>List of type Bill</returns>
+        /// <returns>List of Airbnb</returns>
         public ICollection<Airbnb> GetItems()
         {
             return _context.Airbnb.ToList();
         }
 
         /// <summary>
-        /// GetItem function gets the id and returns the Bill details of that id. To get the bill details of that
+        /// GetItem function gets the id and returns the Airbnb record details of that id. To get the details of that
         /// id, a foreach loop is used to check the id and the values of that id is stored in a variable and returned.
         /// </summary>
         /// <param name="id"></param>
@@ -40,6 +40,11 @@ namespace HWK4.Repositories
             return _context.Airbnb.Where(bill => bill.Id == id).FirstOrDefault();
         }
 
+        /// <summary>
+        /// The createItem method adds a new record to the dataset
+        /// </summary>
+        /// <param name="bill"></param>
+        /// <returns></returns>
         public bool CreateItem(Airbnb bill)
         {
             _context.Add(bill);
@@ -48,11 +53,11 @@ namespace HWK4.Repositories
 
         public bool BillExists(int id)
         {
-            return _context.Airbnb.Any(bill=>bill.Id == id);
+            return _context.Airbnb.Any(bill => bill.Id == id);
         }
 
         /// <summary>
-        /// editItem method is used to update the bill values.This method returns boolean value to indicate if the values are successfully updated or not.
+        /// editItem method is used to update the record values.This method returns boolean value to indicate if the values are successfully updated or not.
         /// </summary>
         /// <param name="bill"></param>
         /// <param name="updated"></param>
@@ -66,7 +71,7 @@ namespace HWK4.Repositories
         }
 
         /// <summary>
-        /// deleteItem method is used to delete the bill value of the id given. This method returns a boolean to let know if the item is deleted or not.
+        /// deleteItem method is used to delete the item value of the id given. This method returns a boolean to let know if the item is deleted or not.
         /// </summary>
         /// <param name="id"></param>
         /// <returns>bool</returns>
@@ -82,24 +87,24 @@ namespace HWK4.Repositories
 
 
         /// <summary>
-        /// getMean method is to get the mean value of the total bill amount.It returns the mean value.
+        /// getMean method returns the average price of airbnb records
         /// </summary>
         /// <returns>int</returns>
         public int getMean()
         {
             var total = _context.Airbnb.Sum(i => i.price);
-           
-            
+
+
             List<Airbnb> items = (List<Airbnb>)GetItems();
-            
+
             int count = items.Count();
             System.Diagnostics.Debug.WriteLine(count);
-            return total/count;
+            return total / count;
 
         }
 
         /// <summary>
-        /// getMax method is to get item that costed the most in the bill items.
+        /// getMax method returns the highest price value of airbnb record
         /// </summary>
         /// <returns>int maximum value</returns>
 
@@ -109,13 +114,12 @@ namespace HWK4.Repositories
             return maxvalue;
         }
 
-        
         public bool Save()
         {
             int saved = _context.SaveChanges();
             return saved == 1;
         }
 
-     
+
     }
 }
