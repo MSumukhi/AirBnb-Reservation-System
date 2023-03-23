@@ -1,14 +1,15 @@
-using HWK4.Interfaces;
-using HWK4.Models;
-using HWK4.Repositories;
+using Airbnb.Interfaces;
+using Airbnb.Models;
+using Airbnb.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 ///<summary>
 ///AirbnbController provides the CRUD operations along with the some data analysis.
 ///</summary>
 
-namespace HWK4.Controllers
+namespace Airbnb.Controllers
 {
+    using Airbnb.Models;
     [ApiController]
     [Route("[Controller]")]
     public class AirbnbController : ControllerBase
@@ -167,7 +168,7 @@ namespace HWK4.Controllers
         {
             return Ok(_billRepository.getMax());
         }
-        
+
         // <summary>
         /// Availability method returns the recors of Airbnb which are available 365 days
         /// </summary>
@@ -181,7 +182,7 @@ namespace HWK4.Controllers
             return Ok(_billRepository.Availability());
         }
 
-       
+
 
     }
 
