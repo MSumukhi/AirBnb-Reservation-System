@@ -1,7 +1,8 @@
-using HWK4.Models;
+using Airbnb.Models;
 
-namespace HWK4.Interfaces
+namespace Airbnb.Interfaces
 {
+    using Airbnb.Models;
     /// <summary>
     /// The interface provides the declarations for the methods used
     /// </summary>
@@ -20,6 +21,7 @@ namespace HWK4.Interfaces
         int getMean();
 
         int getMax();
+        ICollection<Airbnb> Availability();
 
         bool Save();
     }
