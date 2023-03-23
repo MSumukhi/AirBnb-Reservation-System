@@ -1,25 +1,28 @@
-namespace HWK4.Models
+using Airbnb.Models;
+
+namespace Airbnb.Interfaces
 {
+    using Airbnb.Models;
     /// <summary>
-    /// specifies the structure of the dataset and their datatype declarations
+    /// The interface provides the declarations for the methods used
     /// </summary>
-    public class Airbnb
+    public interface IAirbnbRepository
     {
-        public int Id { get; set; }
-        public String name { get; set; }
-        public String host_id { get; set; }
-        public String host_name { get; set; }
-        public String neighbourhood_group { get; set; }
-        public String neighbourhood { get; set; }
-        public double latitude { get; set; }
-        public double longitude { get; set; }
-        public string roomtype { get; set; }
-        public int price { get; set; }
-        public int minimum_nights { get; set; }
-        public int number_of_reviews { get; set; }
-        public double reviews_per_month { get; set; }
-        public String availability_365 { get; set; }
+        ICollection<Airbnb> GetItems();
 
+        Airbnb GetItem(int id);
 
+        bool CreateItem(Airbnb bill);
+
+        bool BillExists(int id);
+
+        bool editItem(Airbnb bill);
+        bool deleteItem(int id);
+        int getMean();
+
+        int getMax();
+        ICollection<Airbnb> Availability();
+
+        bool Save();
     }
 }
