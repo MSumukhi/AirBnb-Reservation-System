@@ -1,6 +1,6 @@
-using HWK4.Data;
-using HWK4.Interfaces;
-using HWK4.Models;
+using Airbnb.Data;
+using Airbnb.Interfaces;
+using Airbnb.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Data;
 using System.Xml.Linq;
@@ -9,8 +9,9 @@ using System.Xml.Linq;
 ///This Repository class contains the function defintions for getItems,getItem,deteleItem,editItem,addItem,getMean and getHighestValue
 ///</summary>
 
-namespace HWK4.Repositories
+namespace Airbnb.Repositories
 {
+    using Airbnb.Models;
     public class AirbnbRepository : IAirbnbRepository
     {
         private DataContext _context;
@@ -119,15 +120,15 @@ namespace HWK4.Repositories
             int saved = _context.SaveChanges();
             return saved == 1;
         }
-        
+
         /// <summary>
         /// Availability method returns the records of airbnb which are available 365 days.
         /// </summary>
         /// <returns></returns>
         public ICollection<Airbnb> Availability()
         {
-            return _context.Airbnb.Where(bill => bill.availability_365=="365").ToList();
-           // return _context.Airbnb.ToList();
+            return _context.Airbnb.Where(bill => bill.availability_365 == "365").ToList();
+            // return _context.Airbnb.ToList();
         }
 
 
