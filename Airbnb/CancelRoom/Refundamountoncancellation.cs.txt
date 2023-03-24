@@ -1,0 +1,42 @@
+Using System;
+
+class Refundamountoncancellation
+{
+	/// <summary>
+	///	Defining the variables for cancellation of a booking 	
+	/// </summary>
+	public string CustomerName { get; set; }
+	public bool Cancelled { get; set; }
+
+	public bool CancelReservation()
+	{
+		/// <summary>
+		///	Checking wheather the reservation is cancelled or not 
+		/// </summary>
+		if (Cancelled)
+		{
+			Console.WriteLine("Reservation has already been cancelled.");
+			return false;
+		}
+		Cancelled = true;
+		/// <summary>
+		///	Displaying the customer name
+		/// </summary>
+		Console.WriteLine("Reservation cancelled for {0}", CustomerName);
+		return true;
+	}
+
+}
+
+class Program
+{
+	static void Main(string[] args)
+	{
+		/// <summary>
+		///	Creating a refernce variable for calling cancel reservation method 
+		/// </summary>
+		Refundamountoncancellation reservation = new Refundamountoncancellation { CustomerName = "Harish" };
+		bool cancelled = reservation.CancelReservation();
+	}
+}
+
