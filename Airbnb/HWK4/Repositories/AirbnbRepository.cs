@@ -11,6 +11,7 @@ using System.Xml.Linq;
 
 namespace Airbnb.Repositories
 {
+    using Airbnb_review.Models;
     using Airbnb.Models;
     public class AirbnbRepository : IAirbnbRepository
     {
@@ -131,6 +132,27 @@ namespace Airbnb.Repositories
             // return _context.Airbnb.ToList();
         }
 
+        /// <summary>
+        /// Getting reviews from the airbnb_review table 
+        /// </summary>
+        /// <returns></returns>
+
+        public ICollection<Airbnb_review> GetReviews()
+        {
+            var review = (from a in _context.Airbnb join ar in _context.Airbnb_review on a.Id equals ar.id select new
+                          Airbnb_review()).ToList();
+            return review;
+        }
+        /// <summary>
+        /// adding reviews for airbnb
+        /// </summary>
+        /// <param name="review"></param>
+        /// <returns></returns>
+        public bool AddReview(Airbnb_review review)
+        {
+            _context.Add(review);
+            return Save();
+        }
 
     }
 }
