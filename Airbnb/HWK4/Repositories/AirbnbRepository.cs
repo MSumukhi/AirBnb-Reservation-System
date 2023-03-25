@@ -124,12 +124,22 @@ namespace HWK4.Repositories
            // return _context.Airbnb.ToList();
         }
 
+        /// <summary>
+        /// Filter Max function is to filter the data based the number of members that can be accommodated in the house.
+        /// </summary>
+        /// <param name="max"></param>
+        /// <returns></returns>
         public ICollection<Airbnb> FilterMax(int max)
         {
 
             return _context.Airbnb.Where(bill => bill.max_people >= max).ToList();
 
         }
+
+        /// <summary>
+        /// Childsafety function is to provide the details of the airbnb houses that has children amenities.
+        /// </summary>
+        /// <returns></returns>
 
         public ICollection<Airbnb> IsChildsafety()
         {

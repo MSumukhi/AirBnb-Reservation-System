@@ -181,6 +181,12 @@ namespace HWK4.Controllers
             return Ok(_billRepository.Availability());
         }
 
+        /// <summary>
+        /// This method is to filter the details of the airbnb houses based on the provided maximum people. 
+        /// </summary>
+        /// <param name="max"></param>
+        /// <returns></returns>
+
         [HttpGet("max_people")]
         [ProducesResponseType(200, Type = typeof(List<Airbnb>))]
 
@@ -190,6 +196,10 @@ namespace HWK4.Controllers
             return Ok(_billRepository.FilterMax(max));
         }
 
+        /// <summary>
+        /// This method provides the details of the airbnb houses that has child safety amenities.
+        /// </summary>
+        /// <returns></returns>
         [HttpGet("Child Amenities")]
         [ProducesResponseType(200, Type = typeof(List<Airbnb>))]
 
