@@ -181,7 +181,24 @@ namespace HWK4.Controllers
             return Ok(_billRepository.Availability());
         }
 
-       
+        [HttpGet("max_people")]
+        [ProducesResponseType(200, Type = typeof(List<Airbnb>))]
+
+        public IActionResult FilterMax(int max)
+        {
+            _logger.Log(LogLevel.Information, "Get bills");
+            return Ok(_billRepository.FilterMax(max));
+        }
+
+        [HttpGet("Child Amenities")]
+        [ProducesResponseType(200, Type = typeof(List<Airbnb>))]
+
+        public IActionResult IsChildSafety()
+        {
+            _logger.Log(LogLevel.Information, "Get bills");
+            return Ok(_billRepository.IsChildsafety());
+        }
+
 
     }
 

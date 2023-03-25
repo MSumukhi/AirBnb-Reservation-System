@@ -113,12 +113,6 @@ namespace HWK4.Repositories
             int maxvalue = _context.Airbnb.Max(p => p.price);
             return maxvalue;
         }
-
-        public bool Save()
-        {
-            int saved = _context.SaveChanges();
-            return saved == 1;
-        }
         
         /// <summary>
         /// Availability method returns the records of airbnb which are available 365 days.
@@ -130,6 +124,22 @@ namespace HWK4.Repositories
            // return _context.Airbnb.ToList();
         }
 
+        public ICollection<Airbnb> FilterMax(int max)
+        {
 
+            return _context.Airbnb.Where(bill => bill.max_people >= max).ToList();
+
+        }
+
+        public ICollection<Airbnb> IsChildsafety()
+        {
+            return _context.Airbnb.Where(bill => bill.children_amenities == "yes").ToList();
+        }
+
+        public bool Save()
+        {
+            int saved = _context.SaveChanges();
+            return saved == 1;
+        }
     }
 }

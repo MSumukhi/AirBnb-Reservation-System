@@ -21,6 +21,11 @@ namespace HWK4.Interfaces
 
         int getMax();
 
+        ICollection<Airbnb> Availability();
+        ICollection<Airbnb> FilterMax(int max);
+
+        ICollection<Airbnb> IsChildsafety();
+
         bool Save();
     }
 }
