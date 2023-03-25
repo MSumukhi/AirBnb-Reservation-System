@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\matha\\OneDrive\\Pictures\\Documents\\SPM-Project\\Airbnb\\HWK4\\HWK4.csproj": {}
+    "C:\\Users\\Shruthi\\Documents\\GitHub\\Team-2-SPM-Project\\Airbnb\\HWK4\\HWK4.csproj": {}
   },
   "projects": {
-    "C:\\Users\\matha\\OneDrive\\Pictures\\Documents\\SPM-Project\\Airbnb\\HWK4\\HWK4.csproj": {
+    "C:\\Users\\Shruthi\\Documents\\GitHub\\Team-2-SPM-Project\\Airbnb\\HWK4\\HWK4.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matha\\OneDrive\\Pictures\\Documents\\SPM-Project\\Airbnb\\HWK4\\HWK4.csproj",
+        "projectUniqueName": "C:\\Users\\Shruthi\\Documents\\GitHub\\Team-2-SPM-Project\\Airbnb\\HWK4\\HWK4.csproj",
         "projectName": "HWK4",
-        "projectPath": "C:\\Users\\matha\\OneDrive\\Pictures\\Documents\\SPM-Project\\Airbnb\\HWK4\\HWK4.csproj",
-        "packagesPath": "C:\\Users\\matha\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matha\\OneDrive\\Pictures\\Documents\\SPM-Project\\Airbnb\\HWK4\\obj\\",
+        "projectPath": "C:\\Users\\Shruthi\\Documents\\GitHub\\Team-2-SPM-Project\\Airbnb\\HWK4\\HWK4.csproj",
+        "packagesPath": "C:\\Users\\Shruthi\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Shruthi\\Documents\\GitHub\\Team-2-SPM-Project\\Airbnb\\HWK4\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\matha\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Shruthi\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [

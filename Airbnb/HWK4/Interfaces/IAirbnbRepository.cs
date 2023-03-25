@@ -28,6 +28,11 @@ namespace Airbnb.Interfaces
 
         bool AddReview(Airbnb_review review);
 
+        ICollection<Airbnb> Availability();
+        ICollection<Airbnb> FilterMax(int max);
+
+        ICollection<Airbnb> IsChildsafety();
+
         bool Save();
     }
 }

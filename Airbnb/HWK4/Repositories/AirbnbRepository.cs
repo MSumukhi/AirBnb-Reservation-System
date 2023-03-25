@@ -121,7 +121,7 @@ namespace Airbnb.Repositories
             int saved = _context.SaveChanges();
             return saved == 1;
         }
-
+        
         /// <summary>
         /// Availability method returns the records of airbnb which are available 365 days.
         /// </summary>
@@ -131,7 +131,27 @@ namespace Airbnb.Repositories
             return _context.Airbnb.Where(bill => bill.availability_365 == "365").ToList();
             // return _context.Airbnb.ToList();
         }
+            
+        /// Filter Max function is to filter the data based the number of members that can be accommodated in the house.
+        /// </summary>
+        /// <param name="max"></param>
+        /// <returns></returns>
+        public ICollection<Airbnb> FilterMax(int max)
+        {
 
+            return _context.Airbnb.Where(bill => bill.max_people >= max).ToList();
+        }
+
+        /// <summary>
+        /// Childsafety function is to provide the details of the airbnb houses that has children amenities.
+        /// </summary>
+        /// <returns></returns>
+
+        public ICollection<Airbnb> IsChildsafety()
+        {
+            return _context.Airbnb.Where(bill => bill.children_amenities == "yes").ToList();
+        }
+        
         /// <summary>
         /// Getting reviews from the airbnb_review table 
         /// </summary>
@@ -152,7 +172,11 @@ namespace Airbnb.Repositories
         {
             _context.Add(review);
             return Save();
-        }
 
+        public bool Save()
+        {
+            int saved = _context.SaveChanges();
+            return saved == 1;
+        }
     }
 }
