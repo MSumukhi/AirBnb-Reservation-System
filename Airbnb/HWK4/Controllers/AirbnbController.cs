@@ -10,6 +10,7 @@ using Microsoft.AspNetCore.Mvc;
 namespace Airbnb.Controllers
 {
     using Airbnb.Models;
+    using Airbnb_review.Models;
     [ApiController]
     [Route("[Controller]")]
     public class AirbnbController : ControllerBase
@@ -182,7 +183,46 @@ namespace Airbnb.Controllers
             return Ok(_billRepository.Availability());
         }
 
+        /// <summary>
+        /// Gets the reviews for airbnbs
+        /// </summary>
+        /// <returns></returns>
 
+        [HttpGet]
+        [ProducesResponseType(200, Type = typeof(List<Airbnb_review>))]
+
+        public IActionResult GetReviews()
+        {
+            _logger.Log(LogLevel.Information, "Get reviews");
+            return Ok(_billRepository.GetReviews());
+        }
+
+        /// <summary>
+        /// Adds reviews from customers
+        /// </summary>
+        /// <param name="review"></param>
+        /// <returns></returns>
+
+        [HttpPost]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+
+        public IActionResult CreateItem([FromBody] Airbnb_review review)
+        {
+            if (review == null)
+            {
+                return BadRequest("review is null");
+            }
+            bool result = _billRepository.CreateItem(review);
+            if (result)
+            {
+                return Ok("Successfully added");
+            }
+            else
+            {
+                return BadRequest("item not added");
+            }
+        }
 
     }
 
