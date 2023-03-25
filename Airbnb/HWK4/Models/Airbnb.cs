@@ -1,28 +1,32 @@
-using Airbnb.Models;
-
-namespace Airbnb.Interfaces
+namespace Airbnb.Models
 {
-    using Airbnb.Models;
     /// <summary>
-    /// The interface provides the declarations for the methods used
+    /// This class has the attributes declaration that are in the database
     /// </summary>
-    public interface IAirbnbRepository
+    public class Airbnb
     {
-        ICollection<Airbnb> GetItems();
+        public int Id { get; set; }
+        public String name { get; set; }
+        public String host_id { get; set; }
+        public String host_name { get; set; }
+        public String neighbourhood_group { get; set; }
+        public String neighbourhood { get; set; }
+        public double latitude { get; set; }
+        public double longitude { get; set; }
+        public string roomtype { get; set; }
+        public int price { get; set; }
+        public int minimum_nights { get; set; }
+        public int number_of_reviews { get; set; }
+        public double reviews_per_month { get; set; }
+        public string availability_365 { get; set; }
+        public string reviews { get; set; } 
 
-        Airbnb GetItem(int id);
 
-        bool CreateItem(Airbnb bill);
+    }
 
-        bool BillExists(int id);
-
-        bool editItem(Airbnb bill);
-        bool deleteItem(int id);
-        int getMean();
-
-        int getMax();
-        ICollection<Airbnb> Availability();
-
-        bool Save();
+    public class Airbnb_review
+    {
+        public int id { get; set; }
+        public string review { get; set; }
     }
 }
