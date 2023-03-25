@@ -1,4 +1,4 @@
-namespace HWK4.Models
+namespace Airbnb.Models
 {
     /// <summary>
     /// This class has the attributes declaration that are in the database
@@ -17,11 +17,10 @@ namespace HWK4.Models
         public int price { get; set; }
         public int minimum_nights { get; set; }
         public int number_of_reviews { get; set; }
-        public int reviews_per_month { get; set; }
-        public String availability_365 { get; set; }
-
+        public double reviews_per_month { get; set; }
+        public string availability_365 { get; set; }
+        public string reviews { get; set; }
         public int max_people { get; set; }
-
         public string children_amenities { get; set; }
 
     }

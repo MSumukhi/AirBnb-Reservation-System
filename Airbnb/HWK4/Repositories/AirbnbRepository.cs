@@ -1,6 +1,6 @@
-using HWK4.Data;
-using HWK4.Interfaces;
-using HWK4.Models;
+using Airbnb.Data;
+using Airbnb.Interfaces;
+using Airbnb.Models;
 using Microsoft.EntityFrameworkCore.Metadata.Internal;
 using System.Data;
 using System.Xml.Linq;
@@ -9,8 +9,10 @@ using System.Xml.Linq;
 ///This Repository class contains the function defintions for getItems,getItem,deteleItem,editItem,addItem,getMean and getHighestValue
 ///</summary>
 
-namespace HWK4.Repositories
+namespace Airbnb.Repositories
 {
+    using Airbnb_review.Models;
+    using Airbnb.Models;
     public class AirbnbRepository : IAirbnbRepository
     {
         private DataContext _context;
@@ -113,6 +115,12 @@ namespace HWK4.Repositories
             int maxvalue = _context.Airbnb.Max(p => p.price);
             return maxvalue;
         }
+
+        public bool Save()
+        {
+            int saved = _context.SaveChanges();
+            return saved == 1;
+        }
         
         /// <summary>
         /// Availability method returns the records of airbnb which are available 365 days.
@@ -120,11 +128,10 @@ namespace HWK4.Repositories
         /// <returns></returns>
         public ICollection<Airbnb> Availability()
         {
-            return _context.Airbnb.Where(bill => bill.availability_365=="365").ToList();
-           // return _context.Airbnb.ToList();
+            return _context.Airbnb.Where(bill => bill.availability_365 == "365").ToList();
+            // return _context.Airbnb.ToList();
         }
-
-        /// <summary>
+            
         /// Filter Max function is to filter the data based the number of members that can be accommodated in the house.
         /// </summary>
         /// <param name="max"></param>
@@ -133,7 +140,6 @@ namespace HWK4.Repositories
         {
 
             return _context.Airbnb.Where(bill => bill.max_people >= max).ToList();
-
         }
 
         /// <summary>
@@ -145,6 +151,27 @@ namespace HWK4.Repositories
         {
             return _context.Airbnb.Where(bill => bill.children_amenities == "yes").ToList();
         }
+        
+        /// <summary>
+        /// Getting reviews from the airbnb_review table 
+        /// </summary>
+        /// <returns></returns>
+
+        public ICollection<Airbnb_review> GetReviews()
+        {
+            var review = (from a in _context.Airbnb join ar in _context.Airbnb_review on a.Id equals ar.id select new
+                          Airbnb_review()).ToList();
+            return review;
+        }
+        /// <summary>
+        /// adding reviews for airbnb
+        /// </summary>
+        /// <param name="review"></param>
+        /// <returns></returns>
+        public bool AddReview(Airbnb_review review)
+        {
+            _context.Add(review);
+            return Save();
 
         public bool Save()
         {

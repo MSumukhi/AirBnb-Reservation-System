@@ -1,7 +1,7 @@
-using HWK4;
-using HWK4.Data;
-using HWK4.Interfaces;
-using HWK4.Repositories;
+using Airbnb;
+using Airbnb.Data;
+using Airbnb.Interfaces;
+using Airbnb.Repositories;
 using Microsoft.EntityFrameworkCore;
 using System.Text.Json.Serialization;
 
@@ -11,9 +11,9 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddTransient<HWK4.Seed>();
-builder.Services.AddControllers().AddJsonOptions(x => 
-                                                 x.JsonSerializerOptions.ReferenceHandler= ReferenceHandler.IgnoreCycles);
+builder.Services.AddTransient<Airbnb.Seed>();
+builder.Services.AddControllers().AddJsonOptions(x =>
+                                                 x.JsonSerializerOptions.ReferenceHandler = ReferenceHandler.IgnoreCycles);
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
 builder.Services.AddEntityFrameworkMySql()
      .AddDbContext<DataContext>(options => options.UseMySql(builder.Configuration.GetConnectionString("DefaultConnection"),
@@ -42,7 +42,7 @@ void SeedData(IHost app)
     using (var scope = scopedFactory.CreateScope())
     {
         var service = scope.ServiceProvider.GetService<Seed>();
-  // service.SeedDataContext();
+        // service.SeedDataContext();
     }
 }
 app.UseHttpsRedirection();

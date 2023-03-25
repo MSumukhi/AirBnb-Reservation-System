@@ -1,14 +1,16 @@
-using HWK4.Interfaces;
-using HWK4.Models;
-using HWK4.Repositories;
+using Airbnb.Interfaces;
+using Airbnb.Models;
+using Airbnb.Repositories;
 using Microsoft.AspNetCore.Mvc;
 
 ///<summary>
 ///AirbnbController provides the CRUD operations along with the some data analysis.
 ///</summary>
 
-namespace HWK4.Controllers
+namespace Airbnb.Controllers
 {
+    using Airbnb.Models;
+    using Airbnb_review.Models;
     [ApiController]
     [Route("[Controller]")]
     public class AirbnbController : ControllerBase
@@ -167,7 +169,7 @@ namespace HWK4.Controllers
         {
             return Ok(_billRepository.getMax());
         }
-        
+
         // <summary>
         /// Availability method returns the recors of Airbnb which are available 365 days
         /// </summary>
@@ -181,7 +183,7 @@ namespace HWK4.Controllers
             return Ok(_billRepository.Availability());
         }
 
-        /// <summary>
+       
         /// This method is to filter the details of the airbnb houses based on the provided maximum people. 
         /// </summary>
         /// <param name="max"></param>
@@ -208,6 +210,48 @@ namespace HWK4.Controllers
             _logger.Log(LogLevel.Information, "Get bills");
             return Ok(_billRepository.IsChildsafety());
         }
+        
+        /// <summary>
+        /// Gets the reviews for airbnbs
+        /// </summary>
+        /// <returns></returns>
+
+        [HttpGet]
+        [ProducesResponseType(200, Type = typeof(List<Airbnb_review>))]
+
+        public IActionResult GetReviews()
+        {
+            _logger.Log(LogLevel.Information, "Get reviews");
+            return Ok(_billRepository.GetReviews());
+        }
+
+        /// <summary>
+        /// Adds reviews from customers
+        /// </summary>
+        /// <param name="review"></param>
+        /// <returns></returns>
+
+        [HttpPost]
+        [ProducesResponseType(200)]
+        [ProducesResponseType(400)]
+
+        public IActionResult CreateItem([FromBody] Airbnb_review review)
+        {
+            if (review == null)
+            {
+                return BadRequest("review is null");
+            }
+            bool result = _billRepository.CreateItem(review);
+            if (result)
+            {
+                return Ok("Successfully added");
+            }
+            else
+            {
+                return BadRequest("item not added");
+            }
+       }
+
 
 
     }

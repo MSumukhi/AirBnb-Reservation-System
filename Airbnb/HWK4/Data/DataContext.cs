@@ -1,13 +1,14 @@
-﻿using HWK4.Models;
+using Airbnb.Models;
 using Microsoft.EntityFrameworkCore;
 
-namespace HWK4.Data
+namespace Airbnb.Data
 {
-    public class DataContext: DbContext
+    using Airbnb.Models;
+    public class DataContext : DbContext
     {
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
         public DbSet<Airbnb> Airbnb { get; set; }
+        public DbSet<Airbnb_review> Airbnb_review { get;set; }
     }
 }
- 
