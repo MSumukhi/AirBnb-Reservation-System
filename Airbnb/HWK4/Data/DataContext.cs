@@ -9,5 +9,6 @@ namespace Airbnb.Data
         public DataContext(DbContextOptions<DataContext> options) : base(options) { }
 
         public DbSet<Airbnb> Airbnb { get; set; }
+        public DbSet<Airbnb_review> Airbnb_review { get;set; }
     }
 }
