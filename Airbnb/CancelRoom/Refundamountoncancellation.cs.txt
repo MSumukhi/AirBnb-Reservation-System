@@ -6,6 +6,9 @@ class Refundamountoncancellation
 	///	Defining the variables for cancellation of a booking 	
 	/// </summary>
 	public string CustomerName { get; set; }
+	public DateTime CheckInDate { get; set; }
+	public DateTime CheckOutDate { get; set; }
+	public bool Refundable { get; set; }
 	public bool Cancelled { get; set; }
 
 	public bool CancelReservation()
@@ -18,12 +21,34 @@ class Refundamountoncancellation
 			Console.WriteLine("Reservation has already been cancelled.");
 			return false;
 		}
+		if (!Refundable)
+		{
+			Console.WriteLine("Reservation is non-refundable and cannot be cancelled.");
+
+			return false;
+		}
 		Cancelled = true;
 		/// <summary>
 		///	Displaying the customer name
 		/// </summary>
 		Console.WriteLine("Reservation cancelled for {0}", CustomerName);
 		return true;
+	}
+	/// <summary>
+	///	Will give the refund based on the start and end date 
+	/// </summary>
+	public decimal CalculateRefund()
+
+	{
+		if (!Refundable || !Cancelled)
+		{
+			return 0;
+		}
+
+		TimeSpan duration = CheckOutDate - CheckInDate;
+		int nights = duration.Days;
+		return nights * 100; // assuming $100 per night refund policy
+
 	}
 
 }
@@ -37,6 +62,16 @@ class Program
 		/// </summary>
 		Refundamountoncancellation reservation = new Refundamountoncancellation { CustomerName = "Harish" };
 		bool cancelled = reservation.CancelReservation();
+
+
+		/// <summary>
+		///	Checking for room cancel or not and displaying the refund amount 
+		/// </summary>
+		if (cancelled)
+		{
+			decimal refundAmount = reservation.CalculateRefund();
+			Console.WriteLine("Refund amount: ${0}", refundAmount);
+		}
 	}
 }
 
