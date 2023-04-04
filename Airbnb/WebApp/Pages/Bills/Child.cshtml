@@ -1,0 +1,63 @@
+﻿@page
+@model AirbnbWebApp.Pages.bill.ChildModel
+<body style=" background-color:#C8998F">
+<h2>List of Airbnb with child amenities</h2>
+@{
+}
+    @*
+    table displaying all the Airbnb that provide children amenities
+    *@
+<table style="border: 1px #000000;" class="table">
+    <thead>
+        <tr>
+            <th>Id</th>
+            <th>name</th>
+            <th>host_id</th>
+            <th>host_name</th>
+            <th>neighbourhood_group</th>
+            <th>neighbourhood</th>
+            <th>latitude</th>
+            <th>longitude</th>
+            <th>roomtype</th>
+            <th>price</th>
+            <th>minimum_nights</th>
+            <th>number_of_reviews</th>
+            <th>reviews_per_month</th>
+            <th>availability_365</th>
+            <th>reviews</th>
+            <th>max_people</th>
+            <th>children_amenities</th>
+
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model.bill)
+        {
+            <tr>
+                <td>@item.Id</td>
+                <td>@item.name</td>
+                <td>@item.host_id</td>
+                <td>@item.host_name</td>
+                <td>@item.neighbourhood_group</td>
+                <td>@item.neighbourhood</td>
+                <td>@item.latitude</td>
+                <td>@item.longitude</td>
+                <td>@item.roomtype</td>
+                <td>@item.price</td>
+                <td>@item.minimum_nights</td>
+                <td>@item.number_of_reviews</td>
+                <td>@item.reviews_per_month</td>
+                <td>@item.availability_365</td>
+                <td>@item.reviews</td>
+                <td>@item.max_people</td>
+                <td>@item.children_amenities</td>
+
+
+
+
+            </tr>
+        }
+    </tbody>
+</table>
+</body>
