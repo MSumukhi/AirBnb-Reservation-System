@@ -1,61 +1,91 @@
-using HWK4.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Newtonsoft.Json;
+using static System.Net.WebRequestMethods;
+using System.Xml.Linq;
 using System.Text.Json;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
+using System.Data;
 
-///<summary>
-///Edit is to update the values in the bill. Here, the values for the item are obtained from the 
-///front-end and are passed to the Put method in the controller
-///</summary>
-namespace WebApp.Pages.Bills
+namespace AirbnbWebApp.Pages.bill
 {
+    using Airbnb.Models;
+    using Airbnb.Data;
+    using Airbnb.Interfaces;
+    using Airbnb.Repositories;
+    using Airbnb.Controllers;
     public class EditModel : PageModel
     {
-        public Bill bill = new();
+        public Airbnb bill = new();
         public string errorMessage = "";
         public string successMessage = "";
+
+        /// <summary>
+        /// Retrieving the airbnb details from database
+        /// </summary>
         public async void OnGet()
         {
             string id = Request.Query["id"];
+
+
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://localhost:5073");
-                //HTTP GET
-                var responseTask = client.GetAsync("Bill/" + id);
+                client.BaseAddress = new Uri("http://localhost:5289");
+
+                // HTTP GET
+                var responseTask = client.GetAsync("Airbnb/" + id);
                 responseTask.Wait();
 
                 var result = responseTask.Result;
                 if (result.IsSuccessStatusCode)
                 {
                     var readTask = await result.Content.ReadAsStringAsync();
-                    bill = JsonConvert.DeserializeObject<Bill>(readTask);
-
+                    bill = JsonConvert.DeserializeObject<Airbnb>(readTask);
                 }
-            }  
+
+            }
         }
 
+        /// <summary>
+        /// Posting the chnages made to the particular Airbnb
+        /// </summary>
         public async void OnPost()
         {
-            bill.Id = int.Parse(Request.Form["id"]);
-            bill.Category = Request.Form["category"];
-            bill.Amount =int.Parse(Request.Form["amount"]);
-            bill.Date = Request.Form["date"];
+            bill.Id = int.Parse(Request.Query["id"]);
+            bill.name = Request.Form["name"];
+            bill.host_id = Request.Form["host_id"];
+            bill.host_name = Request.Form["host_name"];
+            bill.neighbourhood_group = Request.Form["neighbourhood_group"];
+            bill.neighbourhood = Request.Form["neighbourhood"];
+            bill.latitude = double.Parse(Request.Form["latitude"]);
+            bill.longitude = double.Parse(Request.Form["longitude"]);
+            bill.roomtype = Request.Form["roomtype"];
+            bill.price = int.Parse(Request.Form["price"]);
+            bill.minimum_nights = int.Parse(Request.Form["minimum_nights"]);
+            bill.number_of_reviews = int.Parse(Request.Form["number_of_reviews"]);
+            bill.reviews_per_month = double.Parse(Request.Form["reviews_per_month"]);
+            bill.availability_365 = Request.Form["availability_365"];
+            bill.reviews = Request.Form["reviews"];
+            bill.max_people = int.Parse(Request.Form["max_people"]);
+            bill.children_amenities = Request.Form["children_amenities"];
 
-            if (bill.Category.Length == 0)
+            if (bill.name.Length == 0)
             {
-                errorMessage = "Category is required";
+                errorMessage = "FirstName is required";
             }
+            
             else
             {
                 var opt = new JsonSerializerOptions() { WriteIndented = true };
-                string json = System.Text.Json.JsonSerializer.Serialize<Bill>(bill, opt);
+                string json = System.Text.Json.JsonSerializer.Serialize<Airbnb>(bill, opt);
 
                 using (var client = new HttpClient())
                 {
-                    client.BaseAddress = new Uri("http://localhost:5073");
+                    client.BaseAddress = new Uri("http://localhost:5289");
+
                     var content = new StringContent(json, System.Text.Encoding.UTF8, "application/json");
-                    var result = await client.PutAsync("Bill", content);
+
+                    var result = await client.PutAsync("Airbnb", content);
                     string resultContent = await result.Content.ReadAsStringAsync();
                     Console.WriteLine(resultContent);
 
@@ -65,10 +95,12 @@ namespace WebApp.Pages.Bills
                     }
                     else
                     {
-                        successMessage = "Successfully edited";
+                        successMessage = "Successfully editing";
                     }
+
                 }
             }
         }
     }
 }
+
