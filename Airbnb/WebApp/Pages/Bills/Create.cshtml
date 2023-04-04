@@ -1,38 +1,98 @@
-﻿@page
-@model WebApp.Pages.Bills.CreateModel
+@page
+@model AirbnbWebApp.Pages.bill.CreateModel
 @{
 }
-
+<body style=" background-color:#C8998F">
 <br />
-<h2>Create Bill</h2>
-
+<h2>Add Airbnb</h2>
+@*
+    Checking for error message
+*@
 @if (@Model.errorMessage.Length > 0)
 {
     <div>@Model.errorMessage</div>
 }
+@*
+    Creating a form to Add or register a new Airbnb to the database
+*@
 <form method="POST">
+
     <table>
         <tr>
-            <td>ID</td>
-            <td><input type="text" name="id" value="@Model.bill.Id"></td>
+            <td>Id</td>
+            <td><input type="text" name="Id" value="@Model.bill.Id"></td>
         </tr>
         <tr>
-            <td>Category</td>
-            <td><input type="text" name="category" value="@Model.bill.Category"></td>
+            <td>Name</td>
+            <td><input type="text" name="name" value="@Model.bill.name"></td>
+    </tr>
+        <tr>
+            <td>Host_id</td>
+            <td><input type="text" name="host_id" value="@Model.bill.host_id"></td>
         </tr>
         <tr>
-            <td>Amount</td>
-            <td><input type="text" name="amount" value="@Model.bill.Amount"></td>
+            <td>Host_name</td>
+            <td><input type="text" name="host_name" value="@Model.bill.host_name"></td>
         </tr>
         <tr>
-            <td>Date</td>
-            <td><input type="text" name="date" value="@Model.bill.Date"></td>
+            <td>Neighbourhood_group</td>
+            <td><input type="text" name="neighbourhood_group" value="@Model.bill.neighbourhood_group"></td>
+        </tr>
+        <tr>
+            <td>Neighbourhood</td>
+            <td><input type="text" name="neighbourhood" value="@Model.bill.neighbourhood"></td>
+        </tr>
+        <tr>
+            <td>Latitude</td>
+            <td><input type="text" name="latitude" value="@Model.bill.latitude"></td>
+        </tr>
+        <tr>
+            <td>Longitude</td>
+            <td><input type="text" name="longitude" value="@Model.bill.longitude"></td>
+        </tr>
+        <tr>
+            <td>Roomtype</td>
+            <td><input type="text" name="roomtype" value="@Model.bill.roomtype"></td>
+        </tr>
+        <tr>
+            <td>Price</td>
+            <td><input type="text" name="price" value="@Model.bill.price"></td>
+        </tr>
+        <tr>
+            <td>Minimum_nights</td>
+            <td><input type="text" name="minimum_nights" value="@Model.bill.minimum_nights"></td>
+        </tr>
+        <tr>
+            <td>Number_of_reviews</td>
+            <td><input type="text" name="number_of_reviews" value="@Model.bill.number_of_reviews"></td>
+        </tr>
+        <tr>
+            <td>Reviews_per_month</td>
+            <td><input type="text" name="reviews_per_month" value="@Model.bill.reviews_per_month"></td>
+        </tr>
+        <tr>
+            <td>Availability_365</td>
+            <td><input type="text" name="availability_365" value="@Model.bill.availability_365"></td>
+        </tr>
+        <tr>
+        <td>Reviews</td>
+            <td><input type="text" name="reviews" value="@Model.bill.reviews"></td>
+        </tr>
+        <tr>
+            <td>Max_people</td>
+            <td><input type="text" name="max_people" value="@Model.bill.max_people"></td>
+        </tr>
+        <tr>
+            <td>Children_amenities</td>
+            <td><input type="text" name="children_amenities" value="@Model.bill.children_amenities"></td>
         </tr>
     </table>
     <p></p>
-    @if (@Model.successMessage.Length > 0)
-    {
-        <div>@Model.successMessage</div>
-    }
+   
     <input type="submit" value="Add" class="btn btn-primary" />
+        @if (@Model.successMessage.Length > 0)
+        {
+            <div>@Model.successMessage</div>
+        }
 </form>
+</body>
