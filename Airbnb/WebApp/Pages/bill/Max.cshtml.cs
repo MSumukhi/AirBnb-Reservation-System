@@ -6,7 +6,10 @@ namespace AirbnbWebApp.Pages.bill
 {
     public class MaxModel : PageModel
     {
-        public int max = new();
+        public int max;
+        /// <summary>
+        /// Retreiving the details of airbnb that is highly priced
+        /// </summary>
         public async void OnGet()
         {
             var client = new HttpClient();
