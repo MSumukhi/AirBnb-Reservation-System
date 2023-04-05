@@ -21,11 +21,13 @@ namespace AirbnbWebApp.Pages.bill
         public string successMessage = "";
 
         /// <summary>
-        /// Retrieving billdata from the database
+        /// Retrieving the airbnb details from database
         /// </summary>
         public async void OnGet()
         {
-            int id = int.Parse(Request.Query["Id"]);
+            string id = Request.Query["id"];
+
+
             using (var client = new HttpClient())
             {
                 client.BaseAddress = new Uri("http://localhost:5289");
@@ -38,17 +40,18 @@ namespace AirbnbWebApp.Pages.bill
                 if (result.IsSuccessStatusCode)
                 {
                     var readTask = await result.Content.ReadAsStringAsync();
-                    bill= JsonConvert.DeserializeObject<Airbnb>(readTask);
+                    bill = JsonConvert.DeserializeObject<Airbnb>(readTask);
                 }
+
             }
         }
 
         /// <summary>
-        /// Posting the edited billdata to the webapp
+        /// Posting the chnages made to the particular Airbnb
         /// </summary>
         public async void OnPost()
         {
-            
+            bill.Id = int.Parse(Request.Query["id"]);
             bill.name = Request.Form["name"];
             bill.host_id = Request.Form["host_id"];
             bill.host_name = Request.Form["host_name"];
