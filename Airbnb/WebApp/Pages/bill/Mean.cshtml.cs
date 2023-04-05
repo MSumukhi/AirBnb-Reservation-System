@@ -8,6 +8,9 @@ namespace AirbnbWebApp.Pages.bill
     public class MeanModel : PageModel
     {
         public int mean = new();
+        /// <summary>
+        /// Retreiving the everage cost of Airbnbs listed from the database
+        /// </summary>
         public async void OnGet()
         {
             var client = new HttpClient();
