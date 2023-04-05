@@ -19,7 +19,7 @@ namespace AirbnbWebApp.Pages.bill
         public string successMessage = "";
 
         /// <summary>
-        /// Retrieving billdata from database
+        /// Retrieving the Airbnb to delete from database
         /// </summary>
         public async void OnGet()
         {
