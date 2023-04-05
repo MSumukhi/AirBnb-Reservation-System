@@ -23,7 +23,7 @@ namespace AirbnbWebApp.Pages.bill
         public string successMessage = "";
 
         /// <summary>
-        /// Posting a new bill item with each attributr of the billdata structure
+        /// Posting a new Airbnb with each attribute of the airbnb structure
         /// </summary>
         public async void OnPost()
         {
@@ -45,7 +45,7 @@ namespace AirbnbWebApp.Pages.bill
             bill.max_people = int.Parse(Request.Form["max_people"]);
             bill.children_amenities = Request.Form["children_amenities"];
 
-            //checking if firstname is empty and notifying that it is required
+            //checking if name is empty and notifying that it is required
             if (bill.name.Length == 0)
             {
                 errorMessage = "FirstName is required";
