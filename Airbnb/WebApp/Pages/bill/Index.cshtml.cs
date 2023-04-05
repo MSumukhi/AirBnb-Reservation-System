@@ -13,7 +13,7 @@ namespace AirbnbWebApp.Pages.bill
         public List<Airbnb> bill = new();
 
         /// <summary>
-        /// Retrieving billdata from database
+        /// Retrieving Airbnb list from the database
         /// </summary>
         public async void OnGet()
         {
