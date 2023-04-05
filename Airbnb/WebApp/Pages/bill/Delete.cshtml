@@ -1,7 +1,8 @@
-﻿@page
+@page
 @model AirbnbWebApp.Pages.bill.DeleteModel
 @{
 }
+<body style=" background-color:#C8998F">
 <br>
 <h2>Delete Airbnb</h2>
 @*
@@ -13,7 +14,7 @@
 }
 
 @*
-	A form to delete an item from billdata
+	A form to delete a particular airbnb from Airbnb database
 *@
 <form method="POST">
 	<input type="hidden" name="id" value="@Model.bill.Id" />
@@ -27,3 +28,4 @@
 	<p></p>
 	<input type="submit" value="Delete" class="btn btn-primary" />
 </form>
+</body>
