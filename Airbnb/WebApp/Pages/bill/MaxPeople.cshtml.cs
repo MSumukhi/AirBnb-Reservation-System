@@ -11,6 +11,9 @@ namespace AirbnbWebApp.Pages.bill
     public class MaxPeopleModel : PageModel
     {
         public List<Airbnb> ap = new();
+        /// <summary>
+        /// Retreving the list of airbnb that accomodat the number of people from the database
+        /// </summary>
         public async void OnGet()
         {
 
