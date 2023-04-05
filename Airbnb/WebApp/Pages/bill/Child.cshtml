@@ -1,9 +1,13 @@
-﻿@page
+@page
 @model AirbnbWebApp.Pages.bill.ChildModel
+<body style=" background-color:#C8998F">
+<h2>List of Airbnb with child amenities</h2>
 @{
 }
-
-<table class="table">
+    @*
+    table displaying all the Airbnb that provide children amenities
+    *@
+<table style="border: 1px #000000;" class="table">
     <thead>
         <tr>
             <th>Id</th>
@@ -56,3 +60,4 @@
         }
     </tbody>
 </table>
+</body>
