@@ -10,7 +10,7 @@ namespace AirbnbWebApp.Pages.bill
         public List<Airbnb> bill = new();
 
         /// <summary>
-        /// Retrieving billdata from database
+        /// Retrieving details of the houses that has child safety measures from the database
         /// </summary>
         public async void OnGet()
         {
