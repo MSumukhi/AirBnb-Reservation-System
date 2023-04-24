@@ -1,0 +1,81 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = AirbnbWebApp
+build_property.RootNamespace = AirbnbWebApp
+build_property.ProjectDir = C:\Users\matha\OneDrive\Desktop\Airbnb\AirbnbWebApp\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\Users\matha\OneDrive\Desktop\Airbnb\AirbnbWebApp
+build_property._RazorSourceGeneratorDebug = 
+
+[C:/Users/matha/OneDrive/Desktop/Airbnb/AirbnbWebApp/Pages/bill/Availability.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYmlsbFxBdmFpbGFiaWxpdHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/matha/OneDrive/Desktop/Airbnb/AirbnbWebApp/Pages/bill/Child.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYmlsbFxDaGlsZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/matha/OneDrive/Desktop/Airbnb/AirbnbWebApp/Pages/bill/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYmlsbFxDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/matha/OneDrive/Desktop/Airbnb/AirbnbWebApp/Pages/bill/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYmlsbFxEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/matha/OneDrive/Desktop/Airbnb/AirbnbWebApp/Pages/bill/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYmlsbFxFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/matha/OneDrive/Desktop/Airbnb/AirbnbWebApp/Pages/bill/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYmlsbFxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/matha/OneDrive/Desktop/Airbnb/AirbnbWebApp/Pages/bill/Max.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYmlsbFxNYXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/matha/OneDrive/Desktop/Airbnb/AirbnbWebApp/Pages/bill/MaxPeople.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYmlsbFxNYXhQZW9wbGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/matha/OneDrive/Desktop/Airbnb/AirbnbWebApp/Pages/bill/Mean.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcYmlsbFxNZWFuLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/matha/OneDrive/Desktop/Airbnb/AirbnbWebApp/Pages/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/matha/OneDrive/Desktop/Airbnb/AirbnbWebApp/Pages/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/matha/OneDrive/Desktop/Airbnb/AirbnbWebApp/Pages/Privacy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcUHJpdmFjeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/matha/OneDrive/Desktop/Airbnb/AirbnbWebApp/Pages/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/matha/OneDrive/Desktop/Airbnb/AirbnbWebApp/Pages/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/matha/OneDrive/Desktop/Airbnb/AirbnbWebApp/Pages/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/matha/OneDrive/Desktop/Airbnb/AirbnbWebApp/Pages/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-uw2sz1b6cx

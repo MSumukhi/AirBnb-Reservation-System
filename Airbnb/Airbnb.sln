@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.4.33213.308
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Airbnb", "Airbnb\Airbnb.csproj", "{DA39D159-0168-46F1-96FE-5050F1D1A58F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AirbnbWebApp", "AirbnbWebApp\AirbnbWebApp.csproj", "{3A699752-B4B3-4032-8CF3-42D2A8A08728}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{DA39D159-0168-46F1-96FE-5050F1D1A58F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA39D159-0168-46F1-96FE-5050F1D1A58F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA39D159-0168-46F1-96FE-5050F1D1A58F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA39D159-0168-46F1-96FE-5050F1D1A58F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A699752-B4B3-4032-8CF3-42D2A8A08728}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A699752-B4B3-4032-8CF3-42D2A8A08728}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A699752-B4B3-4032-8CF3-42D2A8A08728}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A699752-B4B3-4032-8CF3-42D2A8A08728}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {526107AF-9004-4AF1-B33E-B10982818D77}
+	EndGlobalSection
+EndGlobal
