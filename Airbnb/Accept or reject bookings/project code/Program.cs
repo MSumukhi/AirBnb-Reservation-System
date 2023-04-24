@@ -1,12 +1,17 @@
 ﻿using System;
-//Booking class
+/// <summary>
+/// Booking class
+/// </summary>
 public class Booking
 {
     public string TravelerName { get; set; }
     public DateTime CheckInDate { get; set; }
     public DateTime CheckOutDate { get; set; }
 }
-//Property Owner Class
+/// <summary>
+///Property Owner Class 
+/// </summary>
+
 public class PropertyOwner
 {
     private string _name;
@@ -22,7 +27,10 @@ public class PropertyOwner
     }
 
     public event EventHandler<Booking> BookingReceived;
-    //Method to display receive bookings on console
+    /// <summary>
+    ///Method to display receive bookings on console
+    /// </summary>
+    /// <param name="booking"></param>
     public void ReceiveBooking(Booking booking)
     {
         Console.WriteLine("{0} received a booking from {1} for {2} to {3}.", Name, booking.TravelerName, booking.CheckInDate, booking.CheckOutDate);
@@ -32,18 +40,26 @@ public class PropertyOwner
             BookingReceived(this, booking);
         }
     }
-    //Method to display the accept booking
+    /// <summary>
+    /// Method to display the accept booking
+    /// </summary>
+    /// <param name="booking"></param>
     public void AcceptBooking(Booking booking)
     {
         Console.WriteLine("{0} accepted a booking from {1} for {2} to {3}.", Name, booking.TravelerName, booking.CheckInDate, booking.CheckOutDate);
     }
-    //Method to display the Reject booking
+    /// <summary>
+    /// Method to display the Reject booking
+    /// </summary>
+    /// <param name="booking"></param>
     public void RejectBooking(Booking booking)
     {
         Console.WriteLine("{0} rejected a booking from {1} for {2} to {3}.", Name, booking.TravelerName, booking.CheckInDate, booking.CheckOutDate);
     }
 }
-//Method to populate traveller
+/// <summary>
+/// Method to populate traveller
+/// </summary>
 public class Traveler
 {
     private string _name;
@@ -70,7 +86,9 @@ public class Traveler
         owner.ReceiveBooking(booking);
     }
 }
-//Main program to invoke different methods
+/// <summary>
+/// Main program to invoke different methods
+/// </summary>
 public class Program
 {
     public static void Main()
