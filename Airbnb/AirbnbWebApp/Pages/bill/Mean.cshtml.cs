@@ -9,7 +9,7 @@ namespace AirbnbWebApp.Pages.bill
     {
         public int mean = new();
         /// <summary>
-        /// Retreiving the everage cost of Airbnbs listed from the database
+        /// Retreiving the avaerage price for Airbnb
         /// </summary>
         public async void OnGet()
         {
