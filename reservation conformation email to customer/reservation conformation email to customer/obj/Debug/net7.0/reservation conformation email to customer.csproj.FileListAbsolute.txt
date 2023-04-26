@@ -1,0 +1,15 @@
+C:\Users\hsake\source\repos\reservation conformation email to customer\reservation conformation email to customer\bin\Debug\net7.0\reservation conformation email to customer.exe
+C:\Users\hsake\source\repos\reservation conformation email to customer\reservation conformation email to customer\bin\Debug\net7.0\reservation conformation email to customer.deps.json
+C:\Users\hsake\source\repos\reservation conformation email to customer\reservation conformation email to customer\bin\Debug\net7.0\reservation conformation email to customer.runtimeconfig.json
+C:\Users\hsake\source\repos\reservation conformation email to customer\reservation conformation email to customer\bin\Debug\net7.0\reservation conformation email to customer.dll
+C:\Users\hsake\source\repos\reservation conformation email to customer\reservation conformation email to customer\bin\Debug\net7.0\reservation conformation email to customer.pdb
+C:\Users\hsake\source\repos\reservation conformation email to customer\reservation conformation email to customer\obj\Debug\net7.0\reservation conformation email to customer.csproj.AssemblyReference.cache
+C:\Users\hsake\source\repos\reservation conformation email to customer\reservation conformation email to customer\obj\Debug\net7.0\reservation conformation email to customer.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hsake\source\repos\reservation conformation email to customer\reservation conformation email to customer\obj\Debug\net7.0\reservation conformation email to customer.AssemblyInfoInputs.cache
+C:\Users\hsake\source\repos\reservation conformation email to customer\reservation conformation email to customer\obj\Debug\net7.0\reservation conformation email to customer.AssemblyInfo.cs
+C:\Users\hsake\source\repos\reservation conformation email to customer\reservation conformation email to customer\obj\Debug\net7.0\reservation conformation email to customer.csproj.CoreCompileInputs.cache
+C:\Users\hsake\source\repos\reservation conformation email to customer\reservation conformation email to customer\obj\Debug\net7.0\reservation conformation email to customer.dll
+C:\Users\hsake\source\repos\reservation conformation email to customer\reservation conformation email to customer\obj\Debug\net7.0\refint\reservation conformation email to customer.dll
+C:\Users\hsake\source\repos\reservation conformation email to customer\reservation conformation email to customer\obj\Debug\net7.0\reservation conformation email to customer.pdb
+C:\Users\hsake\source\repos\reservation conformation email to customer\reservation conformation email to customer\obj\Debug\net7.0\reservation conformation email to customer.genruntimeconfig.cache
+C:\Users\hsake\source\repos\reservation conformation email to customer\reservation conformation email to customer\obj\Debug\net7.0\ref\reservation conformation email to customer.dll
