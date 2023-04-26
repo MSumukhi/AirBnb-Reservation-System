@@ -1,0 +1,15 @@
+C:\Users\hsake\source\repos\Reservation status by id\Reservation status by id\bin\Debug\net7.0\Reservation status by id.exe
+C:\Users\hsake\source\repos\Reservation status by id\Reservation status by id\bin\Debug\net7.0\Reservation status by id.deps.json
+C:\Users\hsake\source\repos\Reservation status by id\Reservation status by id\bin\Debug\net7.0\Reservation status by id.runtimeconfig.json
+C:\Users\hsake\source\repos\Reservation status by id\Reservation status by id\bin\Debug\net7.0\Reservation status by id.dll
+C:\Users\hsake\source\repos\Reservation status by id\Reservation status by id\bin\Debug\net7.0\Reservation status by id.pdb
+C:\Users\hsake\source\repos\Reservation status by id\Reservation status by id\obj\Debug\net7.0\Reservation status by id.csproj.AssemblyReference.cache
+C:\Users\hsake\source\repos\Reservation status by id\Reservation status by id\obj\Debug\net7.0\Reservation status by id.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\hsake\source\repos\Reservation status by id\Reservation status by id\obj\Debug\net7.0\Reservation status by id.AssemblyInfoInputs.cache
+C:\Users\hsake\source\repos\Reservation status by id\Reservation status by id\obj\Debug\net7.0\Reservation status by id.AssemblyInfo.cs
+C:\Users\hsake\source\repos\Reservation status by id\Reservation status by id\obj\Debug\net7.0\Reservation status by id.csproj.CoreCompileInputs.cache
+C:\Users\hsake\source\repos\Reservation status by id\Reservation status by id\obj\Debug\net7.0\Reservation status by id.dll
+C:\Users\hsake\source\repos\Reservation status by id\Reservation status by id\obj\Debug\net7.0\refint\Reservation status by id.dll
+C:\Users\hsake\source\repos\Reservation status by id\Reservation status by id\obj\Debug\net7.0\Reservation status by id.pdb
+C:\Users\hsake\source\repos\Reservation status by id\Reservation status by id\obj\Debug\net7.0\Reservation status by id.genruntimeconfig.cache
+C:\Users\hsake\source\repos\Reservation status by id\Reservation status by id\obj\Debug\net7.0\ref\Reservation status by id.dll
