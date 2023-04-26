@@ -12,7 +12,7 @@ namespace AirbnbWebApp.Pages.bill
     {
         public List<Airbnb> ap = new();
         /// <summary>
-        /// Retreving the list of airbnb that accomodat the number of people from the database
+        /// Retreving the list of airbnb that accomodate the number of people from the database
         /// </summary>
         public async void OnGet()
         {

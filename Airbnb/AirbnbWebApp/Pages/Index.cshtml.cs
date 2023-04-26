@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
+using System;
 
 namespace AirbnbWebApp.Pages
 {
@@ -16,5 +17,8 @@ namespace AirbnbWebApp.Pages
         {
 
         }
+
+
     }
 }
+

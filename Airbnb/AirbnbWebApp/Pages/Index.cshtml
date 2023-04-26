@@ -12,38 +12,52 @@
         <h1 class="display-4">AIRBNB RESERVATION</h1>
         <br>
         @* Displaying the CRUD operations*@
-        <a class="btn-danger btn-sm" href="~/bill/Index">CRUD</a><br>
+        <h2> CRUD OPERATIONS : <a class="btn-primary btn-lg" href="~/bill/Index">CRUD</a></h2><br>
         <br>
         @* Displaying Data Analysis methods*@
-        <a class="btn-danger btn-sm" href="~/bill/Max">Get Highest</a>
+        <h2>DATA ANALYSIS : 
+            
+                <a class="btn-primary btn-lg btn-block" href="~/bill/Max">Get Highest</a>
+                <a class="btn-primary btn-lg btn-block" href="~/bill/Mean">Get Mean</a>
+                <a class="btn-primary btn-lg btn-block" href="~/bill/Availability">Check Availability</a>
+                <a class="btn-primary btn-lg btn-block" href="~/bill/Child">Check Child Safety</a>
+        </h2>
         <br>
         <br>
-        <a class="btn-danger btn-sm" href="~/bill/Mean">Get Mean</a>
-        <br>
-        <br>
-        <a class="btn-danger btn-sm" href="~/bill/Availability">Check Availability</a>
-        <br>
-        <br>
-        <a class="btn-danger btn-sm" href="~/bill/Child">Check Child Safety</a>
-<br>
-        <form action="/bill/MaxPeople" method="get">
+        @* A form for the users to enter the number of people so that they get the list of airbnb that accomade the required people *@
+           <h2> FILTERING :            
+            <form action="/bill/MaxPeople" method="get">
             <div class="input-group">
                 <input type="text" name="dId" class="form-control" placeholder="Max">
                 <span class="input-group-btn">
-                    <button class="btn btn-primary" type="submit">Check Accommodation</button>
+                        <button class="btn btn-primary btn-lg btn-block" type="submit">Check Accommodation</button>
                 </span>
             </div>
-        </form>
+            </form>
+        </h2>
 <br>
 <br>
-        <form action="/bill/Predictive" method="get">
+        @* A form for the user to choose the neighbourhood group to make decision based on predictive prices*@
+        <h2>PRICE COMPARISION AMONG NEIGHBOURHOOD GROUPS: 
+            <form action="/bill/Predictive" method="get"> 
+            
             <div class="input-group">
-                <input type="text" name="grp" class="form-control" placeholder="grp">
+                <select name="grp" id="grp" class="form-control" placeholder="grp">
+                    
+                    <option value="Manhattan">Manhattan</option>
+                    <option value="Brooklyn">Brooklyn</option>
+                    <option value="Queens">Queens</option>
+                    <option value="Staten Island">Staten Island</option>
+                </select>
                 <span class="input-group-btn">
-                    <button class="btn btn-primary" type="submit">Group Prediction</button>
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Group Prediction</button>
                 </span>
+            
             </div>
+
+
         </form>
+        </h2>
        
 
 

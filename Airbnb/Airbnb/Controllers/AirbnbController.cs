@@ -65,7 +65,7 @@ namespace Airbnb.Controllers
         }
 
         /// <summary>
-        /// The CreateItem Function adds a new record to the dataset. If the record already exists it returns Not added
+        /// The CreateItem Function adds a new record to the dataset. If the record already exists it returns not added
         /// </summary>
         /// <param name="item"></param>
         /// <returns></returns>
@@ -207,6 +207,11 @@ namespace Airbnb.Controllers
         [HttpGet("Predictive-Analysis")]
         [ProducesResponseType(200, Type = typeof(List<Airbnb>))]
 
+        /// <summary>
+        /// This method provides predictive price of airbnb's among the neighbouring groups. Using this the user's get to choose 
+        /// which neighbour_group would they prefer to stay based on thei requirements and comfort.s
+        /// </summary>
+        /// <returns></returns>
         public IActionResult group_prediction(string grp)
         {
             _logger.Log(LogLevel.Information, "Get bills");

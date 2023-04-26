@@ -12,7 +12,7 @@ namespace AirbnbWebApp.Pages.bill
     {
         public int group = new();
         /// <summary>
-        /// Retreving the list of airbnb that accomodat the number of people from the database
+        /// Retreving the average price of Airbnb among neighbourhood groups
         /// </summary>
         public async void OnGet()
         {

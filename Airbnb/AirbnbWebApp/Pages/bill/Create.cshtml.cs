@@ -27,7 +27,7 @@ namespace AirbnbWebApp.Pages.bill
         /// </summary>
         public async Task<IActionResult> OnPostAsync()
         {
-            bill.Id = int.Parse(Request.Form["Id"]);
+            //bill.Id = int.Parse(Request.Form["Id"]);
             bill.name = Request.Form["name"];
             bill.host_id = Request.Form["host_id"];
             bill.host_name = Request.Form["host_name"];
@@ -73,7 +73,7 @@ namespace AirbnbWebApp.Pages.bill
                     }
                 }
             }
-            return RedirectToPage("/Index");
+            return RedirectToPage("Index");
 
 
         }

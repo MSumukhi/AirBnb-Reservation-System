@@ -98,7 +98,7 @@ namespace AirbnbWebApp.Pages.bill
 
                 }
             }
-            return RedirectToPage("/Index");
+            return RedirectToPage("Index");
         }
     }
 }

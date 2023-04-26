@@ -69,7 +69,7 @@ namespace AirbnbWebApp.Pages.bill
             {
                 errorMessage = "Error deleting";
             }
-            return RedirectToPage("/Index");
+            return RedirectToPage("Index");
 
         }
     }
