@@ -63,8 +63,11 @@ The Airbnb Reservation System is a web application built using ASP.NET Core that
 - Properties: Stores property details (ID, OwnerID, Name, Description, Location, Price)
 - Reservations: Stores reservation details (ID, UserID, PropertyID, StartDate, EndDate, Status)
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
+## Author
+Sumukhi Sri Sai Mathapati
 
-Contact
-For any inquiries or feedback, please contact Sumukhi Sri Sai Mathapati at mathapathisumukhi@gmail.com.
+## Acknowledgements
+- ASP.NET Core: Framework for building web applications.
+- Entity Framework Core: Object-relational mapper for .NET.
+- Docker: Platform for developing, shipping, and running applications.
+- GitHub Actions: CI/CD platform for automating workflows.
