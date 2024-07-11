@@ -65,9 +65,3 @@ The Airbnb Reservation System is a web application built using ASP.NET Core that
 
 ## Author
 Sumukhi Sri Sai Mathapati
-
-## Acknowledgements
-- ASP.NET Core: Framework for building web applications.
-- Entity Framework Core: Object-relational mapper for .NET.
-- Docker: Platform for developing, shipping, and running applications.
-- GitHub Actions: CI/CD platform for automating workflows.
