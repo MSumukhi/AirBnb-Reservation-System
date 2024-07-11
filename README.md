@@ -37,11 +37,11 @@ The Airbnb Reservation System is a web application built using ASP.NET Core that
 2. **Set up the database:**
     Update the appsettings.json with your SQL Server connection string.
     Run the following command to apply migrations:
-    bash
+    ```bash
       dotnet ef database update
 
 3. **Build and run the application:**
-    bash
+    ```bash
       dotnet build
       dotnet run
 
